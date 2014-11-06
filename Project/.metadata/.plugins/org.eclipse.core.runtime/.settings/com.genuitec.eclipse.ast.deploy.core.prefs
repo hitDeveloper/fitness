@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+myeclipseTomcatServer.project.IEARProjectName=
+myeclipseTomcatServer.project.altContextRoot=
+myeclipseTomcatServer.project.contextRoot=/project
+myeclipseTomcatServer.project.deployIsOverProject=false
+myeclipseTomcatServer.project.deploymentPath=D\:\\Project\\.metadata\\.me_tcat\\webapps\\project
+myeclipseTomcatServer.project.isDeployed=true
+myeclipseTomcatServer.project.isExploded=true
+myeclipseTomcatServer.project.isUptoDate=true
+myeclipseTomcatServer.project.noFileCopy=false
+myeclipseTomcatServer.project.shouldBackup=false
+myeclipseTomcatServer.project.shouldOverwrite=false
+myeclipseTomcatServer.project.type=WebDeployment
