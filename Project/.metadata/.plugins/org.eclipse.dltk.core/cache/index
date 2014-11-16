@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cache:CacheIndex xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:cache="http://eclipse.org/dltk/cache_model" environment="org.eclipse.dltk.core.environment.localEnvironment">
+  <entries path="D:/Project/project/WebRoot/bootstrap.min.js" timestamp="1374907847000" lastAccessTime="1415004582440"/>
+  <entries path="D:/Project/project/WebRoot/jquery-1.11.1.min.js" timestamp="1414802366816" lastAccessTime="1415004582936"/>
+</cache:CacheIndex>
