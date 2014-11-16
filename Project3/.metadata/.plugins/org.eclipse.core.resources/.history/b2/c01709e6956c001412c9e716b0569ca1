@@ -1,0 +1,21 @@
+#
+# Source for table "tb_users"
+#
+
+DROP TABLE IF EXISTS `tb_users`;
+CREATE TABLE `tb_users` (
+  `uID` int(11) NOT NULL,
+  `username` varchar(45) DEFAULT 'null',
+  `password` varchar(45) DEFAULT 'null' COMMENT '鐢ㄦ埛鍩烘湰淇℃伅',
+  `number` varchar(20) DEFAULT 'null',
+  `college` varchar(45) DEFAULT 'null',
+  PRIMARY KEY (`uID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `GymManager`.`tb_Admin` (
+  `aID` INT NOT NULL,
+  `password` VARCHAR(45) NULL,
+  `adminName` VARCHAR(45) NULL,
+  `gymName` VARCHAR(100) NULL,
+  PRIMARY KEY (`aID`))
+ENGINE = InnoDB DEFAULT CHARSET=utf8;
+

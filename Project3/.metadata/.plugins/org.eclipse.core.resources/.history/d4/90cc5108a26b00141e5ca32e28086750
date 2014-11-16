@@ -1,0 +1,70 @@
+package login;
+import java.sql.*;
+import java.util.*;
+public class register 
+{
+	private String userName;
+	private String password;
+	private String number;
+	private String college;
+	public void setUserName(String userName)
+	{
+		this.userName=userName;
+	}
+	public String getUserName()
+	{
+		return this.userName;
+	}
+	public void setPassword(String password)
+	{
+		this.password=password;
+	}
+	public String getPassword()
+	{
+		return this.password;
+	}
+	public void setNumber(String number)
+	{
+		this.number=number;
+	}
+	public String getNumber()
+	{
+		return this.number;
+	}
+	public void setCollege(String college)
+	{
+		this.college=college;
+	}
+	public String getCollege()
+	{
+		return this.college;
+	}
+	public String execute() throws Exception
+	{
+		try{
+			int count=1;
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="select * from tb_users";
+			Statement st = (Statement) con.createStatement();
+			Statement st1 = (Statement) con.createStatement();
+            ResultSet rs = st.executeQuery(sql1);
+            if(rs.next())
+            {
+            	count++;
+            }
+            st.close();
+            System.out.println(3);
+            String sql2="INSERT INTO tb_users(uID, username, password, number, college) VALUES ('"+count+"','"+ userName+"','" + password+"','"+number+"','"+college+"')";
+            st1.executeUpdate(sql2);
+        	st1.close();
+		}catch(SQLException e)
+		{
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}
