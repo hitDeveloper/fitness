@@ -1,0 +1,76 @@
+package page;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+public class displayAction
+{
+	private String gymName1;
+	private String userName;
+	private String booktime1;
+	public void setGymName1(String gymName1)
+	{
+		this.gymName1=gymName1;
+	}
+	public String getGymName1()
+	{
+		return this.gymName1;
+	}
+	public void setBooktime1(String booktime1)
+	{
+		this.booktime1=booktime1;
+	}
+	public String getBooktime1()
+	{
+		return this.booktime1;
+	}
+	public void setUserName(String userName)
+	{
+		this.userName=userName;
+	}
+	public String getUserNane()
+	{
+		return this.userName;
+	}
+	public String execute() throws Exception 
+	{
+		try{
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
+			if(userName==null)
+			{
+				return null;
+			}
+			info1[] information=new info1[14];
+			int i=0;
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="select * from tb_book where userName=\""+userName+"\"";
+			Statement st = (Statement) con.createStatement();
+			ResultSet rs = st.executeQuery(sql1);
+			while(rs.next())
+	        {
+				information[i]=new info1();
+				information[i].gymName1 = rs.getString(1);
+				information[i].userName = rs.getString(2);
+				information[i].booktime1 = rs.getString(3);
+				i++;
+	        }
+			attibutes.put("information", information);
+            rs.close();
+		}catch(SQLException e)
+		{
+			return null;
+		}catch(ClassNotFoundException e)
+		{
+			return null;
+		}
+		return null;
+	}
+}
+class info1
+{
+	public String gymName1;
+	public String userName;
+	public String booktime1;
+}

@@ -1,0 +1,88 @@
+# Host: 127.0.0.1  (Version: 5.7.4-m14)
+# Date: 2014-10-27 19:38:04
+# Generator: MySQL-Front 5.3  (Build 4.13)
+
+/*!40101 SET NAMES utf8 */;
+
+#
+# Source for table "tb_admin"
+#
+
+DROP TABLE IF EXISTS `tb_admin`;
+CREATE TABLE `tb_admin` (
+  `aID` int(11) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `adminName` varchar(45) DEFAULT NULL,
+  `gymName` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`aID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "tb_admin"
+#
+
+
+#
+# Source for table "tb_field"
+#
+
+DROP TABLE IF EXISTS `tb_field`;
+CREATE TABLE `tb_field` (
+  `fID` int(11) NOT NULL,
+  `fieldName` varchar(255) DEFAULT NULL,
+  `openDays` varchar(255) DEFAULT NULL,
+  `startTime` time DEFAULT NULL,
+  `endTime` time DEFAULT NULL,
+  `noticeDate` datetime DEFAULT NULL,
+  `notices` varchar(999) DEFAULT NULL,
+  `capacity` varchar(45) DEFAULT NULL,
+  `isBooked` varchar(45) DEFAULT NULL,
+  `isFree` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `summary` varchar(999) DEFAULT NULL COMMENT 'The information of the field.',
+  PRIMARY KEY (`fID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "tb_field"
+#
+
+INSERT INTO `tb_field` VALUES (3001,'鐢峰瓙鍋ョ編','鍛ㄤ竴鑷冲懆鍏�,'18:00:00','21:00:00',NULL,NULL,'','',NULL,'姝ｅ績妤间綋鑲查',NULL),(3002,'鏈夋哀鍋ヨ韩鎿嶏紙1锛�,'鍛ㄤ竴涓変簲','19:10:00','20:40:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3003,'鏈夋哀鍋ヨ韩鎿嶏紙2锛�,'鍛ㄤ簩鍥涘叚','18:00:00','19:30:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3004,'鐟滀冀','鍛ㄤ竴涓変簲','18:00:00','19:00:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3005,'浼犵粺姝︽湳','鍛ㄤ竴涓変簲','12:00:00','13:10:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3006,'灏戞灄姝︽湳锛堟嫵鏈�鍣ㄦ锛�,'鍛ㄤ竴涓変簲','18:00:00','19:00:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3007,'鏁ｆ墦鍒濈骇鐝�,'鍛ㄤ竴涓変簲','18:00:00','19:30:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3008,'鏁ｆ墦楂樼骇鐝�,'鍛ㄤ竴涓変簲','19:40:00','21:10:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3009,'璺嗘嫵閬撳垵绾х彮','鍛ㄤ簩鍥涘叚','18:00:00','19:30:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3010,'璺嗘嫵閬撻珮绾х彮','鍛ㄤ簩鍥涘叚','19:40:00','21:10:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3011,'鍑诲墤','鍛ㄤ竴銆佷簲','06:00:00','07:30:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL),(3012,'浣撹偛鑸炶箞','鍛ㄤ簩鍥涘叚','18:00:00','19:30:00',NULL,NULL,NULL,NULL,NULL,'姝ｅ績妤间綋鑲查',NULL);
+
+#
+# Source for table "tb_gym"
+#
+
+DROP TABLE IF EXISTS `tb_gym`;
+CREATE TABLE `tb_gym` (
+  `gymName` varchar(100) NOT NULL,
+  `gymAddress` varchar(999) DEFAULT NULL,
+  `summary` varchar(999) DEFAULT NULL,
+  `tel` varchar(999) DEFAULT NULL,
+  PRIMARY KEY (`gymName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "tb_gym"
+#
+
+INSERT INTO `tb_gym` VALUES ('涓�尯浣撹偛棣�,'鍝堝伐澶т竴鏍″尯 瑗夸晶瀹ゅ唴浣撹偛棣�,'鍋ョ編銆佹鏈�,'璐熻矗浜猴細鍏充簹鍐� 鑱旂郴鐢佃瘽锛�6416164'),('涓�尯鐢板緞鍦�,'鍝堝伐澶т竴鏍″尯 鍗椾晶浣撹偛鍦�,'鐢板緞銆佹鏈�,'璐熻矗浜猴細缃楀ぇ鏋� 鑱旂郴鐢佃瘽锛�6413180'),('浜屾牎鍖烘枃浣撴椿鍔ㄤ腑蹇�,'鍝堝伐澶т簩鏍″尯 娲诲姩涓績妤�,'瀹ゅ唴绡悆銆佺綉鐞冦�鎺掔悆鍦�,'璐熻矗浜猴細椹繝鏉� 鑱旂郴鐢佃瘽锛�6282165'),('浜屾牎鍖虹敯寰勫満','鍝堝伐澶т簩鏍″尯 鐢板緞鍦�,'鐢板緞銆佸澶栫鐞冨満','璐熻矗浜猴細椹繝鏉� 鑱旂郴鐢佃瘽锛�6282165'),('瀹ゅ绡悆鍦�,'鍝堝伐澶т竴鏍″尯 绻佽崳琛椾笌鏍″洯琛楄鍙�,'鎾掓棪','璐熻矗浜猴細寮犳柊  鑱旂郴鐢佃瘽锛�6403293'),('灏忚冻鐞冨満','鍝堝伐澶т竴鏍″尯 鐢板緞鍦轰笢','瓒崇悆','璐熻矗浜猴細寮犳柊  鑱旂郴鐢佃瘽锛�6403293'),('姝ｅ績妤间綋鑲查','鍝堝伐澶т竴鏍″尯 姝ｅ績妤煎湴 涓嬪','缇芥瘺鐞冦�涔掍箵鐞冦�鍋ョ編瀹ゃ�鑸炶箞瀹�,'璐熻矗浜猴細寮犳柊  鑱旂郴鐢佃瘽锛�6403293');
+
+#
+# Source for table "tb_users"
+#
+
+DROP TABLE IF EXISTS `tb_users`;
+CREATE TABLE `tb_users` (
+  `uID` int(11) NOT NULL,
+  `username` varchar(45) DEFAULT 'null',
+  `password` varchar(45) DEFAULT 'null' COMMENT '鐢ㄦ埛鍩烘湰淇℃伅',
+  `number` varchar(20) DEFAULT 'null',
+  `college` varchar(45) DEFAULT 'null',
+  PRIMARY KEY (`uID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "tb_users"
+#
+

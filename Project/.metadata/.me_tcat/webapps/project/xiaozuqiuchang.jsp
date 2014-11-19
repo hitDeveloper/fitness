@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,15 +31,18 @@
 	<li class="divider-vertical"></li>
 	<li class="active"><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
 </div>
-
 <div class="tabbable tabs-left">
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#tiyuchang" data-toggle="tab">小足球场</a></li>
@@ -46,7 +50,7 @@
 <div class="tab-content">
 <div class="tab-pane active" id="tiyuchang">
 <div class="span6">
-<div class="carousel slide" id="carousel1">
+<div class="carousel slide" id="caro">
 <div class="carousel-inner">
 <div class="item">
 <img src="image/gym/xiaozuqiuchang/731dbe25tdd20461e8051&690.jpg" alt="">
@@ -55,17 +59,16 @@
 <img src="image/gym/xiaozuqiuchang/2.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#caro" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#caro" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
-<div>
 </div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">小足球场</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大小足球场是最近几年新近建立的室外足球场，规格为105*64米，春夏秋三季主要进行的项目为室外足球及田径项目。
-如果人数较少可以凭学生证在办公人员那里接到小足球场专用的橡胶球门。冬季由于硅胶场地转硬，继续进行足球活动危险性较高，该场地会进行浇冰处理，转而变为滑冰场地。
-值得注意的是，这块场地也是大二学生体育课场地，如果有课的情况下谢绝进入，所以活动前要提前查看情况哦。</p>
-</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
 <div class="span4">
@@ -76,23 +79,28 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>06:00-21:00</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>免费</p>
+<p><s:property value="#session.price"/></p>
 </div>
 </div>
 </div>
 </div>
+
 </div>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="bootstrap.min.js"></script>
 </body>
 </html>

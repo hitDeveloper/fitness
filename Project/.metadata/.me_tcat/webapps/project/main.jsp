@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
 	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>

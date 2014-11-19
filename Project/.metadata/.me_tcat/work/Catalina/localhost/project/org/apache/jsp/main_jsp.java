@@ -52,6 +52,7 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
@@ -83,10 +84,14 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<li class=\"divider-vertical\"></li>\r\n");
       out.write("\t<li><a href=\"xiaozuqiuchang.jsp\">小足球场</a></li>\r\n");
       out.write("\t<li class=\"divider-vertical\"></li>\r\n");
-      out.write("\t<li><a href=\"myplan.jsp\">制定我的健身计划</a></li>\r\n");
+      out.write("\t<li><a href=\"myplan.jsp\">健身计划</a></li>\r\n");
       out.write("\t<li class=\"divider-vertical\"></li>\r\n");
       out.write("\t<li><a href=\"book.jsp\">场馆预定</a></li>\r\n");
       out.write("\t<li class=\"divider-vertical\"></li>\r\n");
+      out.write("</ul>\r\n");
+      out.write("<ul class=\"nav pull-right\">\r\n");
+      out.write("\t<li><a href=\"login.jsp\">登录</a></li>\r\n");
+      out.write("\t<li><a href=\"register.jsp\">注册</a></li>\r\n");
       out.write("</ul>\r\n");
       out.write("</div>\r\n");
       out.write("</div>\r\n");

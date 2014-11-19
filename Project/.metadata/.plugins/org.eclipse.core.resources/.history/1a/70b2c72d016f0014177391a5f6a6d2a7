@@ -1,0 +1,51 @@
+package page;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+public class orderAction
+{
+	private String gymName;
+	private String booktime;
+	private String information;
+	public String getInformation()
+	{
+		return this.information;
+	}
+	public void setBooktime(String booktime)
+	{
+		this.booktime=booktime;
+	}
+	public String getBooktime()
+	{
+		return this.booktime;
+	}
+	public void setGymName(String gymName)
+	{
+		this.gymName=gymName;
+	}
+	public String getGymName()
+	{
+		return this.gymName;
+	}
+	public String execute() throws Exception 
+	{
+		try{
+			Map attibutes = ActionContext.getContext().getSession();
+			String userName = null;
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="INSERT INTO tb_book(gymName, userName, booktime) VALUES ('"+gymName+"','"+ userName+"','" + booktime+"')";
+			Statement st = (Statement) con.createStatement();
+            st.close();
+		}catch(SQLException e)
+		{
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}

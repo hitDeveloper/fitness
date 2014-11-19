@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -61,14 +66,17 @@
 <img src="image/gym/huodongzhongxin/20130731084912390.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">活动中心</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大活动中心是哈工大内装修最现代化的楼宇之一，拥有许多排练厅琴房，排练厅占地都很大，装修非常现代，舞蹈厅和排练厅主要集中在三楼，可以举办健美操、瑜伽、交谊舞等集体活动。还有101 201 301剧场，话剧相声等的排练公演大都在此。一楼为退休职工提供乒乓球场地，不过并不对学生开放。</p>
-</div>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p></div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
 <div class="span4">
@@ -79,19 +87,23 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p></p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p></p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p></p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p></p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>

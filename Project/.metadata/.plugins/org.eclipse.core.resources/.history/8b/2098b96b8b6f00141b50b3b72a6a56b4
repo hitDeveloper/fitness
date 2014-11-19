@@ -1,0 +1,20 @@
+package plan;
+import java.sql.*;
+import java.util.*;
+public class planAction
+{
+	private String age;
+	private String height;
+	private String weight;
+	private String payTime;
+	private String gender;
+	private String hobby;
+	public void setAge(String age)
+	{
+		this.age=age;
+	}
+	public String getAge()
+	{
+		return this.age;
+	}
+}

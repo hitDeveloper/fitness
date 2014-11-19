@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">  
+  
+<validators>  
+  
+<field name="username">  
+  
+<field-validator type="requiredstring">  
+  
+<param name="trim">false</param>  
+  
+<message>username can't be blank!</message>  
+  
+</field-validator>  
+  
+<field-validator type="stringlength">  
+  
+<param name="minLength">4</param>  
+  
+<param name="maxLength">6</param>  
+  
+<param name="trim">false</param>  
+  
+<message key="username.invalid"></message>  
+  
+</field-validator>  
+  
+</field>  
+  
+<field name="password">  
+  
+<field-validator type="requiredstring">  
+  
+<message>password can't be blank!</message>  
+  
+</field-validator>  
+  
+<field-validator type="stringlength">  
+  
+<param name="minLength">4</param>  
+  
+<param name="maxLength">6</param>  
+  
+<message>length of password should be between ${minLength} and ${maxLength}</message>  
+  
+</field-validator>  
+  
+</field>  
+  
+<field name="age">  
+  
+<field-validator type="required">  
+  
+<message>age can't be blank!</message>  
+  
+</field-validator>  
+  
+<field-validator type="int">  
+  
+<param name="min">10</param>  
+  
+<param name="max">40</param>  
+  
+<message>age should be between ${min} and ${max}</message>  
+  
+</field-validator>  
+  
+</field>  
+  
+</validators>  

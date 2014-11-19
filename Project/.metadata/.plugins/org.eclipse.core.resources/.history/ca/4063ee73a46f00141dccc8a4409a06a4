@@ -1,0 +1,91 @@
+package plan;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+public class planAction
+{
+	private String age;
+	private String height;
+	private String weight;
+	private String payTime;
+	private String gender;
+	private String hobby;
+	public void setAge(String age)
+	{
+		this.age=age;
+	}
+	public String getAge()
+	{
+		return this.age;
+	}
+	public void setHeight(String height)
+	{
+		this.height=height;
+	}
+	public String getHeight()
+	{
+		return this.height;
+	}
+	public void setWeight(String weight)
+	{
+		this.weight=weight;
+	}
+	public String getWeight()
+	{
+		return this.weight;
+	}
+	public void setPayTime(String payTime)
+	{
+		this.payTime=payTime;
+	}
+	public String getPayTime()
+	{
+		return this.payTime;
+	}
+	public void setGender(String gender)
+	{
+		this.gender=gender;
+	}
+	public String getGender()
+	{
+		return this.gender;
+	}
+	public void setHobby(String hobby)
+	{
+		this.hobby=hobby;
+	}
+	public String getHobby()
+	{
+		return this.hobby;
+	}
+	public String execute() throws Exception
+	{
+		try{
+			String userName;
+			String sql2;
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="select * from tb_info where userName=\""+userName+"\"";
+			Statement st = (Statement) con.createStatement();
+            ResultSet rs = st.executeQuery(sql1);
+            if(rs.next())
+            {
+            	sql2="update tb_gym set age=\""+age+"\" where userName = \""+userName+"\"";
+            }
+            else
+            {
+            	sql2=;
+            }
+		}catch(SQLException e)
+		{
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}

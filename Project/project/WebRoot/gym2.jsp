@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -63,38 +68,44 @@
 <img src="image/gym/diertiyuchang/lanqiu/u=349218685,1379723717&fm=23&gp=0.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">第二体育场篮球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大第二体育场，是哈工大一校区内最大的一块室外运动场地，全部场地采用硅PU材料地面，防滑减震效果出色，场地干净整洁，并配有出色的保洁设施。即使是雨雪天气刚刚结束也能迅速恢复比赛场地。该体育场承办过许多院系级别的篮球、网球、排球比赛，是工大学子们室外活动的理想选择。</p>
-<p>其中，本场地拥有篮球全场十块，共有20块篮球架均采用机械升降配置，场地尺寸遵从国际篮联要求，以近几年为例承办过李宁杯、学院杯、航天杯等多次篮球比赛。如果你有篮球的天赋，快来这里，满足你所有的篮球愿望！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
 <div class="span4">
-<p></p>
+
 </div>
 <div class="span8">
 <img src="image/8.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>学生凭学生卡免费</p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>
@@ -112,14 +123,17 @@
 <img src="image/gym/diertiyuchang/paiqiu/20116109232827742.jpg" alt="">
 </div>
 </div>
-<a href="#carousel2" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel2" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel2" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel2" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">第二体育场排球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大第二体育场，是哈工大一校区内最大的一块室外运动场地，全部场地采用硅PU材料地面，防滑减震效果出色，场地干净整洁，并配有出色的保洁设施。即使是雨雪天气刚刚结束也能迅速恢复比赛场地。该体育场承办过许多院系级别的篮球、网球、排球比赛，是工大学子们室外活动的理想选择。</p>
-<p>其中，本场地拥有排球场地6块，单场地尺寸18*9米，网高约2.3米（不区分男子排球及女子排球）。这里也是工大内唯一的免费排球场地。虽然由于国内学生对于排球兴趣略低，但也使得排球场地始终充足，而且是留学生们最爱聚集的地方，如果想认识更多更酷的朋友，就来排球场吧！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -131,19 +145,23 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>学生凭学生卡免费</p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>
@@ -164,14 +182,17 @@
 <img src="image/gym/diertiyuchang/wangqiu/20120924141580938093.jpg" alt="">
 </div>
 </div>
-<a href="#carousel3" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel3" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel3" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel3" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">第二体育场网球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大第二体育场，是哈工大一校区内最大的一块室外运动场地，全部场地采用硅PU材料地面，防滑减震效果出色，场地干净整洁，并配有出色的保洁设施。即使是雨雪天气刚刚结束也能迅速恢复比赛场地。该体育场承办过许多院系级别的篮球、网球、排球比赛，是工大学子们室外活动的理想选择。</p>
-<p>其中，本场地拥有网球场地11块，尺寸满足国家标准，并针对降雨排水问题对场地进行优化，保证在最短时间内恢复场地的正常使用。场地四周均有高度约4米的铁丝拦网，保证即使你用100个球来练习，也可以保证不飞出场地之外。网球是最近几年来火爆度越来越高的潮流运动，所以快来网球场释放你的运动激情吧！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -183,19 +204,23 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>学生凭学生卡免费</p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>

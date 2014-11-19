@@ -1,10 +1,12 @@
 package login;
 import java.sql.*;
+import java.util.*;
+import com.opensymphony.xwork2.ActionContext;
 public class userLoginAction{
 	private String userName;
 	private String adminName;
 	private String password;
-	private String information;
+	private String information="";
 	public String getInformation()
 	{
 		return this.information;
@@ -32,6 +34,7 @@ public class userLoginAction{
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
 			String sql1="select * from tb_users where username=\""+userName+"\" and password=\""+password+"\"";
 			String sql2="select * from tb_admin where adminName=\""+adminName+"\" and password=\""+password+"\"";
+			String sql3="select * from tb_admin where adminName=\""+adminName+"\"";
 			if("".equals(password))
 			{
 				information="密码不能为空";
@@ -39,6 +42,7 @@ public class userLoginAction{
 			}
 			else if(("".equals(userName))&&("".equals(adminName)))
 			{
+				information="账号不能为空";
 				return "INPUT";
 			}
 			else if(!"".equals(userName))
@@ -56,12 +60,46 @@ public class userLoginAction{
 			{
 				Statement st = (Statement) con.createStatement();
 	            ResultSet rs = st.executeQuery(sql2);
+	            String gymName=null;
 	            if(!rs.next())
 	            {
 	            	rs.close();
-	            	information="管理员名或密码错误";
+	            	information="该管理员不存在";
 	            	return "INPUT";
 	            }
+	            rs.close();
+	            rs=st.executeQuery(sql3);
+	            while(rs.next())
+		        {
+		        	gymName = rs.getString(4);
+		        }
+	            rs.close();
+	            String sql4="select * from tb_gym where gymName=\""+gymName+"\"";
+	            String usedNumber=null,totalNumber=null,manager=null,time=null,telNumber=null,price=null;
+	            String introduction=null,news=null;
+	            rs=st.executeQuery(sql4);
+	            while(rs.next())
+		        {
+		        	usedNumber = rs.getString(2);
+		        	totalNumber = rs.getString(3);
+		        	manager = rs.getString(4);
+		        	time = rs.getString(5);
+		        	telNumber = rs.getString(6);
+		        	price = rs.getString(7);
+		        	introduction = rs.getString(9);
+		        	news = rs.getString(8);
+		        }
+	            rs.close();
+	            Map attibutes = ActionContext.getContext().getSession();
+	            attibutes.put("gymName", gymName);
+	            attibutes.put("usedNumber", usedNumber);
+	            attibutes.put("totalNumber", totalNumber);
+	            attibutes.put("manager", manager);
+	            attibutes.put("time", time);
+	            attibutes.put("telNumber", telNumber);
+	            attibutes.put("price", price);
+	            attibutes.put("introduction", introduction);
+	            attibutes.put("news", news);
 	            return "NONE";
 			}
 		}catch(SQLException e)
@@ -71,6 +109,8 @@ public class userLoginAction{
 		{
 			return "INPUT";
 		}
+		Map attibutes = ActionContext.getContext().getSession();
+		attibutes.put("userName", userName);
 		return "SUCCESS";
 	}
 }

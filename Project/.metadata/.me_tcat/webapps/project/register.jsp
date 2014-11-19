@@ -9,10 +9,11 @@
 	<link href="bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="register" method="post">
+<form action="registerAction" method="post">
 <div class="container">
 <h1 class="page-header" >哈工大健身网<img src="image/logo.jpg"></h1>
 <h4 class="page-header" align="center">用户注册</h4>
+<div align="center"><s:property value="information"/></div>
 <div align="center">
 <div class="input-append">
 <span class="add-on"><div class="span1" align="center">用户名</div></span>
@@ -25,42 +26,48 @@
 </div></div>
 <div align="center">
 <div class="input-prepend input-append">
-<span class="add-on"><div class="span1" align="center">年龄</div></span>
-<input type="text" placeholder="输入您的年龄" class="span3" name="age" /><span class="add-on">岁</span>
+<span class="add-on"><div class="span1" align="center">确认密码</div></span>
+<input type="password" placeholder="请再输入一次" class="span3" name="repassword" />
 </div></div>
 <div align="center">
 <div class="input-prepend input-append">
-<span class="add-on"><div class="span1" align="center">身高</div></span>
-<input type="text" placeholder="输入您的身高" class="span3" name="length" /><span class="add-on">cm</span>
+<span class="add-on"><div class="span1" align="center">学号</div></span>
+<input type="password" placeholder="请输入学号" class="span3" name="number" />
 </div></div>
 <div align="center">
 <div class="input-prepend input-append">
-<span class="add-on"><div class="span1" align="center">体重</div></span>
-<input type="text" placeholder="输入您的身高" class="span3" name="weight" /><span class="add-on">kg</span>
+<span class="add-on"><div class="span1" align="center">学院</div></span>
+<select class="span3" name="college">
+<option value="航天学院">航天学院</option>
+<option value="机电工程学院">机电工程学院</option>
+<option value="材料科学与工程学院">材料科学与工程学院</option>
+<option value="电子与信息工程学院">电子与信息工程学院</option>
+<option value="能源科学与工程学院">能源科学与工程学院</option>
+<option value="电气工程及自动化学院">电气工程及自动化学院</option>
+<option value="理学院">理学院</option>
+<option value="经济与管理学院">经济与管理学院</option>
+<option value="人文与社会科学学院">人文与社会科学学院</option>
+<option value="土木工程学院">土木工程学院</option>
+<option value="市政环境工程学院">市政环境工程学院</option>
+<option value="建筑学院">建筑学院</option>
+<option value="交通科学与工程学院">交通科学与工程学院</option>
+<option value="计算机科学与技术学院">计算机科学与技术学院</option>
+<option value="软件学院">软件学院</option>
+<option value="法学院">法学院</option>
+<option value="化工学院">化工学院</option>
+<option value="食品科学与工程学院">食品科学与工程学院</option>
+<option value="外国语学院">外国语学院</option>
+<option value="媒体技术与艺术系">媒体技术与艺术系</option>
+<option value="生命科学与技术学院">生命科学与技术学院</option>
+<option value="马克思主义学院">马克思主义学院</option>
+<option value="基础学部">基础学部</option>
+<option value="基础与交叉科学研究院">基础与交叉科学研究院</option>
+<option value="实验学院">实验学院</option>
+<option value="其他学院">其他学院</option>
+</select>
 </div></div>
 <div align="center">
-<p>性别</p>
-男<input type="radio" name="sex" value="男">
-女<input type="radio" name="sex" value="女"><br />
-</div>
-<div align="center">
-<p>年级</p>
-大一<input type="radio" name="grade" value="大一">
-大二<input type="radio" name="grade" value="大二">
-大三<input type="radio" name="grade" value="大三"><br />
-大四<input type="radio" name="grade" value="大四">
-研一<input type="radio" name="grade" value="研一">
-研二<input type="radio" name="grade" value="研二">
-</div>
-<div align="center">
-<p>健身目标</p>
-减肥<input type="radio" name="excerciseAim" value="减肥">
-锻炼<input type="radio" name="excerciseAim" value="锻炼">
-练肌肉<input type="radio" name="excerciseAim" value="练肌肉">
-健康<input type="radio" name="excerciseAim" value="健康">
-</div>
-<div align="center">
-	<input class="btn" type="submit" value="提交"/>     
+	<input class="btn" type="submit" value="注册"/>     
 </div>
 
 </div>

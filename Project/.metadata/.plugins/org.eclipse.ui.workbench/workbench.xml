@@ -27,6 +27,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -48,8 +50,8 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="xiaozuqiuchang.jsp" partName="xiaozuqiuchang.jsp" path="D:/Project/project/WebRoot/xiaozuqiuchang.jsp" title="xiaozuqiuchang.jsp" tooltip="project/WebRoot/xiaozuqiuchang.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/project/WebRoot/xiaozuqiuchang.jsp"/>
+<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="book.jsp" partName="book.jsp" path="D:/Project/project/WebRoot/book.jsp" title="book.jsp" tooltip="project/WebRoot/book.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/project/WebRoot/book.jsp"/>
 </editor>
 </editors>
 <views>
@@ -258,7 +260,18 @@
 <view id="com.genuitec.eclipse.sqlexplorer.views.DatabaseView" partName="DB Browser">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.completionField" categoryGroup="none" markerContentGenerator="org.eclipse.ui.ide.tasksGenerator" partName="Tasks">
+<columnWidths org.eclipse.ui.ide.completionField="40" org.eclipse.ui.ide.descriptionField="300" org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.priorityField="30" org.eclipse.ui.ide.resourceField="90"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.completionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.priorityField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.descriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -383,7 +396,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.2" ratioLeft="200" ratioRight="800" relationship="2" relative="cvslocation"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1df3b8bc" ratio="0.7873264" ratioLeft="907" ratioRight="245" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1df3b8bc" ratio="0.7326389" ratioLeft="844" ratioRight="308" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -399,6 +412,9 @@
 <page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_users`" label="LabelNotFound"/>
 <page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_admin`" label="LabelNotFound"/>
 <page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_field`" label="LabelNotFound"/>
+<page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_gym`" label="LabelNotFound"/>
+<page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_book`" label="LabelNotFound"/>
+<page content="com.genuitec.eclipse.sqlexplorer.views.EditDataView:`test`.`tb_plan`" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -449,73 +465,97 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/main.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/gym.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/tiyubu.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/zhengxin.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan1.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/project/src/plan/planAction.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" path="/project/src/gymmanager.sql"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/xiaozuqiuchang.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/project/src/login/registerAction.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/zhengxin.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/gym.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/tiyubu.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/center.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/swimming.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/gym2.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/tiyubu.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/swimming.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/gym2.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/book.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/admin.jsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/xiaozuqiuchang.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/myplan1.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/project/WebRoot/book.jsp"/>
 </editors>
-<item historyLabel="tiyubu.jsp" index="2"/>
-<item historyLabel="zhengxin.jsp" index="3"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="main.jsp" index="0"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="main.jsp" index="0"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="main.jsp" index="0"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="zhengxin.jsp" index="5"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="tiyubu.jsp" index="6"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="center.jsp" index="7"/>
-<item historyLabel="swimming.jsp" index="8"/>
-<item historyLabel="gym2.jsp" index="9"/>
-<item historyLabel="swimming.jsp" index="8"/>
-<item historyLabel="center.jsp" index="7"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="center.jsp" index="7"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="gym2.jsp" index="9"/>
-<item historyLabel="main.jsp" index="0"/>
-<item historyLabel="swimming.jsp" index="8"/>
-<item historyLabel="tiyubu.jsp" index="6"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="zhengxin.jsp" index="5"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="xiaozuqiuchang.jsp" index="4"/>
-<item historyLabel="zhengxin.jsp" index="5"/>
-<item historyLabel="gym.jsp" index="1"/>
-<item historyLabel="tiyubu.jsp" index="10"/>
-<item historyLabel="center.jsp" index="7"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4205" y="0"/>
+</item>
+<item historyLabel="myplan.jsp" index="0"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4446" y="0"/>
+</item>
+<item historyLabel="myplan.jsp" index="0"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4688" y="0"/>
+</item>
+<item historyLabel="myplan.jsp" index="0"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="5215" y="0"/>
+</item>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="0"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="0"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="gymmanager.sql" index="3">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4514" y="0"/>
+</item>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="4"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="xiaozuqiuchang.jsp" index="5"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="xiaozuqiuchang.jsp" index="5"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4514" y="0"/>
+</item>
+<item historyLabel="xiaozuqiuchang.jsp" index="5"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4514" y="0"/>
+</item>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4514" y="0"/>
+</item>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="4"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="4"/>
+<item historyLabel="myplan1.jsp" index="1"/>
+<item historyLabel="myplan.jsp" index="4"/>
+<item historyLabel="planAction.java" index="2">
+<position info="not_deleted" x="4514" y="0"/>
+</item>
+<item historyLabel="registerAction.java" index="6">
+<position info="not_deleted" x="1023" y="1699"/>
+</item>
+<item historyLabel="zhengxin.jsp" index="7"/>
+<item historyLabel="gym.jsp" index="8"/>
+<item historyLabel="tiyubu.jsp" index="9"/>
+<item historyLabel="center.jsp" index="10"/>
 <item historyLabel="swimming.jsp" index="11"/>
 <item historyLabel="gym2.jsp" index="12"/>
-<item historyLabel="book.jsp" index="13"/>
-<item historyLabel="myplan.jsp" index="14"/>
-<item historyLabel="book.jsp" index="13"/>
-<item historyLabel="gym2.jsp" index="12"/>
-<item active="true" historyLabel="xiaozuqiuchang.jsp" index="15"/>
+<item historyLabel="xiaozuqiuchang.jsp" index="5"/>
+<item historyLabel="admin.jsp" index="13"/>
+<item historyLabel="xiaozuqiuchang.jsp" index="14"/>
+<item historyLabel="admin.jsp" index="13"/>
+<item historyLabel="myplan.jsp" index="15"/>
+<item historyLabel="myplan1.jsp" index="16"/>
+<item historyLabel="myplan.jsp" index="15"/>
+<item historyLabel="xiaozuqiuchang.jsp" index="14"/>
+<item active="true" historyLabel="book.jsp" index="17"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -533,14 +573,20 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="book.jsp" tooltip="project/WebRoot/book.jsp">
+<persistable path="/project/WebRoot/book.jsp"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="xiaozuqiuchang.jsp" tooltip="project/WebRoot/xiaozuqiuchang.jsp">
 <persistable path="/project/WebRoot/xiaozuqiuchang.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="myplan.jsp" tooltip="project/WebRoot/myplan.jsp">
 <persistable path="/project/WebRoot/myplan.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="book.jsp" tooltip="project/WebRoot/book.jsp">
-<persistable path="/project/WebRoot/book.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="myplan1.jsp" tooltip="project/WebRoot/myplan1.jsp">
+<persistable path="/project/WebRoot/myplan1.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin.jsp" tooltip="project/WebRoot/admin.jsp">
+<persistable path="/project/WebRoot/admin.jsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="gym2.jsp" tooltip="project/WebRoot/gym2.jsp">
 <persistable path="/project/WebRoot/gym2.jsp"/>
@@ -560,20 +606,17 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="zhengxin.jsp" tooltip="project/WebRoot/zhengxin.jsp">
 <persistable path="/project/WebRoot/zhengxin.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="main.jsp" tooltip="project/WebRoot/main.jsp">
-<persistable path="/project/WebRoot/main.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="admin.jsp" tooltip="project/WebRoot/admin.jsp">
-<persistable path="/project/WebRoot/admin.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="register.jsp" tooltip="project/WebRoot/register.jsp">
-<persistable path="/project/WebRoot/register.jsp"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.sqlexplorer.editors.SQLEditor" name="gymmanager.sql" tooltip="project/src/gymmanager.sql">
 <persistable path="/project/src/gymmanager.sql"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.struts2.editor" name="struts.xml" tooltip="project/src/struts.xml">
-<persistable path="/project/src/struts.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="orderAction.java" tooltip="project/src/page/orderAction.java">
+<persistable path="/project/src/page/orderAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="displayAction.java" tooltip="project/src/page/displayAction.java">
+<persistable path="/project/src/page/displayAction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="backAction.java" tooltip="project/src/back/backAction.java">
+<persistable path="/project/src/back/backAction.java"/>
 </file>
 </mruList>
 </workbench>

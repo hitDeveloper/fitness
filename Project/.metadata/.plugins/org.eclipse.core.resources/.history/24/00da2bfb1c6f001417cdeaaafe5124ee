@@ -1,0 +1,27 @@
+package page;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+public class deleteOrderAction
+{
+	private String gymName1;
+	private String booktime1;
+	public void setGymName1(String gymName1)
+	{
+		this.gymName1=gymName1;
+	}
+	public String getGymName1()
+	{
+		return this.gymName1;
+	}
+	public void setBooktime1(String booktime1)
+	{
+		this.booktime1=booktime1;
+	}
+	public String getBooktime1()
+	{
+		return this.booktime1;
+	}
+	
+}

@@ -1,0 +1,7 @@
+CREATE TABLE tb_users (
+  `uID` int(11) NOT NULL,
+  `username` varchar(45) primary key,
+  `password` varchar(45),
+  `number` varchar(20),
+  `college` varchar(45),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

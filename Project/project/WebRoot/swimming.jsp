@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -58,16 +63,17 @@
 <img src="image/gym/youyongguan/d0f49e8f-0f18-4361-8ef3-e573a51736d8.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">游泳馆</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大游泳馆建设项目于2007年6月正式开工建设，2009年正式投入使用。游泳馆总建筑面积11500平方米，地上四层，
-局部地下一层。第一层为门厅、更衣和淋浴等用房，第二层和第四层分设两个50×25米标准游泳池，其中，第二层游泳池为浅水池（1.0—1.5米），
-第四层游泳池为深水池（1.3—2.0米）。游泳馆水质处理采用石英砂过滤+全流臭氧消毒工艺，为世界上最为先进的循环水处理工艺，在2008年北京奥运会水立方和国家奥体中心两个主场馆都采用此工艺，
-可达到国际游泳协会（FINA）的水质标准。价格优惠，凭证入馆，刷卡消费。只对校内学生、职工及家属开放。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -79,19 +85,23 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>早场06:00-08:00，日场09:00-21:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p></p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p></p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>早场￥5/2小时（学生） ￥8/2小时（教工），日场￥6/2小时（学生）￥10/2小时（教工）</p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>

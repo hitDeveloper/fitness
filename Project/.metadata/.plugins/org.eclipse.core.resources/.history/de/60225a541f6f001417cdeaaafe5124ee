@@ -1,0 +1,62 @@
+package page;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+public class deleteOrderAction
+{
+	private String gymName1;
+	private String booktime1;
+	public void setGymName1(String gymName1)
+	{
+		this.gymName1=gymName1;
+	}
+	public String getGymName1()
+	{
+		return this.gymName1;
+	}
+	public void setBooktime1(String booktime1)
+	{
+		this.booktime1=booktime1;
+	}
+	public String getBooktime1()
+	{
+		return this.booktime1;
+	}
+	public String execute() throws Exception 
+	{
+		try{
+			Map attibutes = ActionContext.getContext().getSession();
+			String userName;
+			int number=0;
+			String usedNumber=null,totalNumber=null;
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="delete * from tb_book where userName=\""+userName+"\" and gymName=\""+gymName1+"\"";
+			String sql2="select * from tb_gym where gymName=\""+gymName1+"\"";
+			Statement st = (Statement) con.createStatement();
+			st.executeUpdate(sql1);
+            st.close();
+            ResultSet rs = st.executeQuery(sql2);
+            while(rs.next())
+			{
+				usedNumber=rs.getString(2);
+				totalNumber=rs.getString(3);
+			}
+            rs.close();
+            number=Integer.parseInt(usedNumber)-1;
+			usedNumber=Integer.toString(number);
+			String sql3="update tb_gym set usedNumber=\""+usedNumber+"\" where gymName = \""+gymName1+"\"";
+			st.executeUpdate(sql3);
+			st.close();
+		}catch(SQLException e)
+		{
+			return null;
+		}catch(ClassNotFoundException e)
+		{
+			return null;
+		}
+		return null;
+	}
+}

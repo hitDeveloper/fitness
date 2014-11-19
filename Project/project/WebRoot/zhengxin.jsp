@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -63,14 +68,16 @@
 <img src="image/gym/zhengxinlou/pingpangqiu/2013222161721926.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">正心楼乒乓球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大正心楼体育馆于2005年7月动工，2007年正式交付使用。体育馆位于正心楼地下室，设有羽毛球场，乒乓球场，体育舞蹈室、健美操室。每学期，体育部在此开设各种培训班，丰富学生课外生活，指导学生体育技能，培养学生正确的健身方法。</p>
-<p>其中乒乓球室拥有19个乒乓球桌，是我校乒乓球桌拥有量最大的健身场馆。乒乓球设施全部使用高档品牌球桌，球拍可以自备，也可以在服务台以平价购买，同时提供球拍贴胶等维护修理服务，乒乓球场地为校内学生免费提供使用。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -81,20 +88,24 @@
 <img src="image/1.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>06:00-21:30</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>免费，但如需学习课程需要交培训费，价格不等</p>
+<p><s:property value="#session.price"/></p>
 </div>
 </div>
 </div>
@@ -118,14 +129,16 @@
 <img src="" alt="">
 </div>
 </div>
-<a href="#carousel2" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel2" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel2" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel2" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">正心楼羽毛球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大正心楼体育馆于2005年7月动工，2007年正式交付使用。体育馆位于正心楼地下室，设有羽毛球场，乒乓球场，体育舞蹈室、健美操室。每学期，体育部在此开设各种培训班，丰富学生课外生活，指导学生体育技能，培养学生正确的健身方法。</p>
-<p>地下室内占地最大的是学生们最喜欢的羽毛球场地，羽毛球室分为3个区，共有12个场地。羽毛球室宽敞高大，高度至少有7米，白天有自然采光，由于开放时间达到晚上9点半，所以灯光设施也极好。这也是工大内和篮球场一样火爆的场地了，如果是周末，一定要早点来才会有场地。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -136,20 +149,24 @@
 <img src="image/1.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>06:00-21:30</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>免费，但如需学习课程需要交培训费，价格不等</p>
+<p><s:property value="#session.price"/></p>
 </div>
 </div>
 </div>
@@ -170,14 +187,16 @@
 <img src="image/gym/zhengxinlou/wudaojiaoshi/20090427093504598.jpg" alt="">
 </div>
 </div>
-<a href="#carousel3" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel3" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel3" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel3" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">正心楼舞蹈教室</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大正心楼体育馆于2005年7月动工，2007年正式交付使用。体育馆位于正心楼地下室，设有羽毛球场，乒乓球场，体育舞蹈室、健美操室。每学期，体育部在此开设各种培训班，丰富学生课外生活，指导学生体育技能，培养学生正确的健身方法。</p>
-<p>体育馆内拥有一个舞蹈室，场地较大，地面采用复合地板，全尺寸贴墙平面镜，让每一个动作完美展现。该教室同体育部一样开设多种收费课程，、具体收费标准和开课时间请在体育部或正心楼地下体育馆服务台处查询。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -188,20 +207,24 @@
 <img src="image/1.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>06:00-21:30</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>张新</p>
+<p><s:property value="#session.manager"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86403293</p>
+<p><s:property value="#session.telNumber"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>免费，但如需学习课程需要交培训费，价格不等</p>
+<p><s:property value="#session.price"/></p>
 </div>
 </div>
 </div>

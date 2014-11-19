@@ -1,0 +1,25 @@
+package page;
+import java.sql.*;
+import java.util.*;
+import com.opensymphony.xwork2.ActionContext;
+public class orderAction
+{
+	private String gymName;
+	private String booktime;
+	public void setBooktime(String booktime)
+	{
+		this.booktime=booktime;
+	}
+	public String getBooktime()
+	{
+		return this.booktime;
+	}
+	public void setGymName(String gymName)
+	{
+		this.gymName=gymName;
+	}
+	public String getGymName()
+	{
+		return this.gymName;
+	}
+}

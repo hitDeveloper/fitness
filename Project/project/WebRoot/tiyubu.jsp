@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -64,15 +69,19 @@
 <img src="image/gym/tiyubu/pingpangqiu/20091124062157901.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">体育部乒乓球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大体育部成立于1988年6月，体育馆的设计非常有特色，从外部看有棱有角，呈现多个三角形突出，所以校内同学也多称呼体育馆为“八角楼”。体育部现有篮球场地、羽毛球场地、乒乓球场地及健身室。</p>
-<p>其中，室内乒乓球台桌有15个，乒乓球场地位于体育馆地下一层，其中，外侧6台为初学者台面，内侧9台为专业级台面。由于初学者和专业运动员对于台面材质的要求、场地大小的要求不大一致，故有此划分。由于台桌较多，工作日空闲较多，而周末人比较多，可以根据自身情况合理选择时间。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
+
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
 <div class="span4">
@@ -82,20 +91,27 @@
 <img src="image/5.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>关亚军</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86416164</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p></p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>
@@ -119,14 +135,16 @@
 <img src="" alt="">
 </div>
 </div>
-<a href="#carousel2" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel2" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel2" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel2" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">体育部羽毛球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大体育部成立于1988年6月，体育馆的设计非常有特色，从外部看有棱有角，呈现多个三角形突出，所以校内同学也多称呼体育馆为“八角楼”。体育部现有篮球场地、羽毛球场地、乒乓球场地及健身室。</p>
-<p>体育馆内拥有羽毛球场地12个，尺寸为13.4米*5.2米，网高约1.55米，地面材质为复合地板，采用大功率照明灯提供照明，保证场馆可视度。近几年举办过建工杯等校级羽毛球比赛。值得一提的是，由于羽毛球场地和篮球场地有部分混编，所以个别时间可能场地数量不足12个，但也不会少于8个。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -138,18 +156,22 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>关亚军</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86416164</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
+<p><s:property value="#session.price"/></p>
 <p></p>
 </div>
 </div>
@@ -168,14 +190,17 @@
 <img src="image/gym/tiyubu/wudaojiaoshi/1-140415104310294.jpg" alt="">
 </div>
 </div>
-<a href="#carousel3" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel3" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel3" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel3" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">体育部舞蹈教室</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大体育部成立于1988年6月，体育馆的设计非常有特色，从外部看有棱有角，呈现多个三角形突出，所以校内同学也多称呼体育馆为“八角楼”。体育部现有篮球场地、羽毛球场地、乒乓球场地及健身室。</p>
-<p>体育馆内拥有一个舞蹈室，由于场地较少，所以此舞蹈室也常用作健美室、瑜伽室及散打训练室。场地较大，地面采用复合地板，拥有各方面的专业器材可供选择辅助训练。值得注意的是，该教室内开设多种收费课程，如武术类、散打类、瑜伽等，具体收费标准和开课时间请在体育部公告内查询。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -187,19 +212,23 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>关亚军</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86416164</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p></p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>
@@ -221,14 +250,17 @@
 <img src="image/gym/tiyubu/lanqiu/20091020174726713.jpg" alt="">
 </div>
 </div>
-<a href="#carousel4" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel4" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel4" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel4" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">体育部篮球</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大体育部成立于1988年6月，体育馆的设计非常有特色，从外部看有棱有角，呈现多个三角形突出，所以校内同学也多称呼体育馆为“八角楼”。体育部现有篮球场地、羽毛球场地、乒乓球场地及健身室。</p>
-<p>其中，室内篮球场地有两个（以全场计算），采用机械升降篮球架，国际标准场地尺寸，高亮度室内灯光，而地面材料采用复合地板，相对于水泥或硅胶场地来说能更好地保护运动员的健康，也能带来更舒适的运动体验。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">场馆位置</h4>
@@ -240,18 +272,22 @@
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>08:00-17:00</p>
+<p><s:property value="#session.time"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>关亚军</p>
+<p><s:property value="#session.manager"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86416164</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
+<p><s:property value="#session.price"/></p>
 <p></p>
 </div>
 </div>

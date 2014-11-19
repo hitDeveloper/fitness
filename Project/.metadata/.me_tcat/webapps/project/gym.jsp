@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,14 @@
 	<li class="divider-vertical"></li>
 	<li><a href="xiaozuqiuchang.jsp">小足球场</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">制定我的健身计划</a></li>
+	<li><a href="myplan.jsp">健身计划</a></li>
 	<li class="divider-vertical"></li>
-	<li><a href="myplan.jsp">场馆预定</a></li>
+	<li><a href="book.jsp">场馆预定</a></li>
 	<li class="divider-vertical"></li>
+</ul>
+<ul class="nav pull-right">
+	<li><a href="login.jsp">登录</a></li>
+	<li><a href="register.jsp">注册</a></li>
 </ul>
 </div>
 </div>
@@ -61,18 +66,18 @@
 <img src="image/gym/tiyuchang/20070924092256.jpg" alt="">
 </div>
 </div>
-<a href="#carousel1" data-slide="prev" class="left carousel-control"><</a>
-<a href="#carousel1" data-slide="next" class="right carousel-control">></a>
+<a href="#carousel1" data-slide="prev" class="left carousel-control">&lsaquo;</a>
+<a href="#carousel1" data-slide="next" class="right carousel-control">&rsaquo;</a>
 </div>
 </div>
 <div>
+<s:action name="pageAction" executeResult="true">
+<s:param name="gymName">体育场</s:param> 
+</s:action>
 <h4 class="page-header">场馆介绍</h4>
-<p>哈工大体育场是哈工大最早建设的室外田径场，目前拥有400米标准塑胶跑道，以及标准足球场一个。足球场的草坪为仿真草坪，
-相对于砂石或塑胶场地能极大降低运动风险。缺点是冬季较易结冰，所以冬季并不适合进行在此场地上进行足球运动。由于建立时间较为长久，
-目前该体育场正处于大修阶段，修缮完成时间尚不确定，喜欢田径或足球的同学可选择东侧的小足球场活动。</p>
-</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#session.introduction"/></p></div>
 <div class="span10">
-<h4 class="page-header">场馆位置</h4>
+<h4 class="page-header">场馆位置</h4></div>
 <div class="span4">
 <p></p>
 </div>
@@ -80,20 +85,26 @@
 <img src="image/2.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
-<p>检修中 ，暂不对外开放</p>
+<p><s:property value="#session.time"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">联系人</h4>
-<p>罗大林</p>
+<p><s:property value="#session.manager"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">电话</h4>
-<p>86413180</p>
+<p><s:property value="#session.telNumber"/></p>
+
 </div>
 <div class="span10">
 <h4 class="page-header">收费情况</h4>
-<p>免费</p>
+<p><s:property value="#session.price"/></p>
+
 </div>
 </div>
 </div>
