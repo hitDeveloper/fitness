@@ -66,7 +66,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<link href=\"bootstrap-responsive.min.css\" rel=\"stylesheet\" type=\"text/css\">\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<form action=\"backAction\" method=\"post\">\r\n");
+      out.write("<form action=\"backAction\" method=\"post\" enctype=\"multipart/form-data\">\r\n");
       out.write("<div class=\"container\">\r\n");
       out.write("<h1 class=\"page-header\" >哈工大健身网<img src=\"image/logo.jpg\"></h1>\r\n");
       out.write("\t<div class=\"page-header\" align=\"center\"><h4>欢迎您，");
@@ -85,7 +85,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\"></td>\r\n");
       out.write("\t<td><label>总共可用</label><input type=\"text\" name=\"totalNumber\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${totalNumber}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("\"></td>\r\n");
+      out.write("\"><a href=\"order.jsp\">订单详情</a></td>\r\n");
       out.write("\t<td><label>联系人</label><input type=\"text\" name=\"manager\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${manager}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\"></td>\r\n");
@@ -117,6 +117,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div align=\"center\">\r\n");
       out.write("<button type=\"submit\" class=\"btn btn-default\">提交</button>\r\n");
       out.write("<button type=\"reset\" class=\"btn btn-default\">取消</button>\r\n");
+      out.write("\r\n");
       out.write("</div>\r\n");
       out.write("</div>\r\n");
       out.write("</form>\r\n");

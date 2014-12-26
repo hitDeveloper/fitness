@@ -1,0 +1,35 @@
+package plan;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+
+public class jumpAction
+{
+	public String execute() throws Exception
+	{
+		try{
+			String userName="";
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Statement st = (Statement) con.createStatement();
+			
+			
+			
+			
+			
+			
+			
+			
+		}catch(SQLException e)
+		{
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}

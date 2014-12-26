@@ -1,0 +1,17 @@
+package test;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+public class TestCase1 extends TestCase {
+
+	public static Test suite() {
+		TestSuite suite = new TestSuite(TestCase1.class.getName());
+		//$JUnit-BEGIN$
+
+		//$JUnit-END$
+		return suite;
+	}
+
+}

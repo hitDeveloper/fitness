@@ -26,6 +26,11 @@
   		<action name="bookAction" class="page.bookAction">
   		<result name="NONE">/error.jsp</result>
   		</action>
+  		<action name="checkAction" class="page.checkAction">
+  		<result name="NONE">/error.jsp</result>
+  		</action>
+  		<action name="orderDisAction" class="back.orderDisAction">
+  		</action>
   		<action name="orderAction" class="page.orderAction">
   		<result name="SUCCESS">/success2.jsp</result>
   		<result name="INPUT">/book.jsp</result>
@@ -34,9 +39,16 @@
   		<result name="SUCCESS">/success3.jsp</result>
   		<result name="INPUT">/book.jsp</result>
   		</action>
+  		<action name="deleteBookAction" class="back.deleteBookAction">
+  		<result name="SUCCESS">/success4.jsp</result>
+  		<result name="INPUT">/order.jsp</result>
+  		</action>
   		<action name="planAction" class="plan.planAction">
   		<result name="SUCCESS">/myplan1.jsp</result>
   		<result name="INPUT">/myplan.jsp</result>
+  		</action>
+  		<action name="jumpAction" class="plan.jumpAction">
+  		<result name="SUCCESS">/myplan1.jsp</result>
   		</action>
   	</package>
 </struts>

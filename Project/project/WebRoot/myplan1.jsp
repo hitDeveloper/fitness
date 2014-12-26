@@ -44,6 +44,14 @@
 </div>
 </div>
 <h4 class="page-header" align="center">我的健身计划</h4>
+
+
+
+
+
+
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="agePlan"></s:property><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="weightPlan"></s:property><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="hobbyPlan"></s:property><br>

@@ -144,22 +144,21 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<img src=\"image/3.jpg\" class=\"pull-right\" width=\"400\">\r\n");
       out.write("</div>\r\n");
       out.write("<div class=\"span10\">\r\n");
-      out.write("<h4 class=\"page-header\">开放时间</h4>\r\n");
+      out.write("<h4 class=\"page-header\">比赛消息</h4>\r\n");
       out.write("<p>");
       if (_jspx_meth_s_005fproperty_005f1(_jspx_page_context))
         return;
       out.write("</p>\r\n");
       out.write("</div>\r\n");
       out.write("<div class=\"span10\">\r\n");
-      out.write("<h4 class=\"page-header\">联系人</h4>\r\n");
+      out.write("<h4 class=\"page-header\">开放时间</h4>\r\n");
       out.write("<p>");
       if (_jspx_meth_s_005fproperty_005f2(_jspx_page_context))
         return;
       out.write("</p>\r\n");
-      out.write("\r\n");
       out.write("</div>\r\n");
       out.write("<div class=\"span10\">\r\n");
-      out.write("<h4 class=\"page-header\">电话</h4>\r\n");
+      out.write("<h4 class=\"page-header\">联系人</h4>\r\n");
       out.write("<p>");
       if (_jspx_meth_s_005fproperty_005f3(_jspx_page_context))
         return;
@@ -167,9 +166,17 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("</div>\r\n");
       out.write("<div class=\"span10\">\r\n");
-      out.write("<h4 class=\"page-header\">收费情况</h4>\r\n");
+      out.write("<h4 class=\"page-header\">电话</h4>\r\n");
       out.write("<p>");
       if (_jspx_meth_s_005fproperty_005f4(_jspx_page_context))
+        return;
+      out.write("</p>\r\n");
+      out.write("\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"span10\">\r\n");
+      out.write("<h4 class=\"page-header\">收费情况</h4>\r\n");
+      out.write("<p>");
+      if (_jspx_meth_s_005fproperty_005f5(_jspx_page_context))
         return;
       out.write("</p>\r\n");
       out.write("</div>\r\n");
@@ -300,7 +307,7 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent(null);
     // /xiaozuqiuchang.jsp(82,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f1.setValue("#session.time");
+    _jspx_th_s_005fproperty_005f1.setValue("#session.news");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f1);
@@ -319,7 +326,7 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent(null);
     // /xiaozuqiuchang.jsp(86,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f2.setValue("#session.manager");
+    _jspx_th_s_005fproperty_005f2.setValue("#session.time");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f2);
@@ -337,8 +344,8 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent(null);
-    // /xiaozuqiuchang.jsp(91,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f3.setValue("#session.telNumber");
+    // /xiaozuqiuchang.jsp(90,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f3.setValue("#session.manager");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f3);
@@ -356,14 +363,33 @@ public final class xiaozuqiuchang_jsp extends org.apache.jasper.runtime.HttpJspB
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f4 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f4.setParent(null);
-    // /xiaozuqiuchang.jsp(96,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f4.setValue("#session.price");
+    // /xiaozuqiuchang.jsp(95,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f4.setValue("#session.telNumber");
     int _jspx_eval_s_005fproperty_005f4 = _jspx_th_s_005fproperty_005f4.doStartTag();
     if (_jspx_th_s_005fproperty_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
       return true;
     }
     _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f4);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fproperty_005f5(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:property
+    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f5 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
+    _jspx_th_s_005fproperty_005f5.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fproperty_005f5.setParent(null);
+    // /xiaozuqiuchang.jsp(100,3) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f5.setValue("#session.price");
+    int _jspx_eval_s_005fproperty_005f5 = _jspx_th_s_005fproperty_005f5.doStartTag();
+    if (_jspx_th_s_005fproperty_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f5);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f5);
     return false;
   }
 }

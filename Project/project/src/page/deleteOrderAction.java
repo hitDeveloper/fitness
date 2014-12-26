@@ -33,13 +33,10 @@ public class deleteOrderAction
 			userName = (String)attibutes.get("userName");
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
-			String sql1="delete * from tb_book where userName=\""+userName+"\" and gymName=\""+gymName1+"\"";
+			String sql1="delete from tb_book where userName=\""+userName+"\" and gymName=\""+gymName1+"\"";
 			String sql2="select * from tb_gym where gymName=\""+gymName1+"\"";
 			Statement st = (Statement) con.createStatement();
-			System.out.println(userName);
-			System.out.println(gymName1);
 			st.executeUpdate(sql1);
-            st.close();
             ResultSet rs = st.executeQuery(sql2);
             while(rs.next())
 			{
@@ -48,7 +45,6 @@ public class deleteOrderAction
             rs.close();
             number=Integer.parseInt(usedNumber)-1;
 			usedNumber=Integer.toString(number);
-			System.out.println(usedNumber);
 			String sql3="update tb_gym set usedNumber=\""+usedNumber+"\" where gymName = \""+gymName1+"\"";
 			st.executeUpdate(sql3);
 			st.close();

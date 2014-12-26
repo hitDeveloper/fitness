@@ -32,7 +32,7 @@
 <div align="center">
 <div class="input-prepend input-append">
 <span class="add-on"><div class="span1" align="center">学号</div></span>
-<input type="password" placeholder="请输入学号" class="span3" name="number" />
+<input type="text" placeholder="请输入学号" class="span3" name="number" />
 </div></div>
 <div align="center">
 <div class="input-prepend input-append">

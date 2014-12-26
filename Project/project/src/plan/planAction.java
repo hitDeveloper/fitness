@@ -2,6 +2,8 @@ package plan;
 import java.sql.*;
 import java.util.*;
 
+import com.opensymphony.xwork2.ActionContext;
+
 public class planAction
 {
 	private String age;
@@ -85,11 +87,16 @@ public class planAction
 			payTimePlan="";
 			hobbyPlan="";
 			weightPlan="";
-			int number;
-			number=Integer.parseInt(weight)/(Integer.parseInt(height)*Integer.parseInt(height));
+			float number;
+			number=(float)Integer.parseInt(weight)/(Integer.parseInt(height)*Integer.parseInt(height));
+			String userName="";
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
 			Statement st = (Statement) con.createStatement();
+			String sql2="INSERT INTO tb_info(userName, age, height, weight, payTime, gender, hobby) VALUES ('"+userName+"','"+ age+"','" + height+"','"+weight+"','"+payTime+"','"+gender+"','"+hobby+"')";
+			st.executeUpdate(sql2);
 			if(Integer.parseInt(age)>45)
 			{
 				String sql1="select * from tb_plan where pID= '1'";
@@ -246,6 +253,7 @@ public class planAction
 			}
 		}catch(SQLException e)
 		{
+			System.out.println("00");
 			return "INPUT";
 		}catch(ClassNotFoundException e)
 		{

@@ -1,0 +1,55 @@
+package back;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
+
+public class deleteBookAction
+{
+	private String userName;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String execute() throws Exception 
+	{
+		try{
+			Map attibutes = ActionContext.getContext().getSession();
+			String gymName;
+			gymName = (String)attibutes.get("gymName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			String sql1="delete from tb_book where userName=\""+userName+"\" and gymName=\""+gymName+"\"";
+			String sql2="select * from tb_gym where gymName=\""+gymName+"\"";
+			Statement st = (Statement) con.createStatement();
+			st.executeUpdate(sql1);
+            ResultSet rs = st.executeQuery(sql2);
+            while(rs.next())
+			{
+				usedNumber=rs.getString(2);
+			}
+            rs.close();
+            number=Integer.parseInt(usedNumber)-1;
+			usedNumber=Integer.toString(number);
+			String sql3="update tb_gym set usedNumber=\""+usedNumber+"\" where gymName = \""+gymName1+"\"";
+			st.executeUpdate(sql3);
+			st.close();
+		}catch(SQLException e)
+		{
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}

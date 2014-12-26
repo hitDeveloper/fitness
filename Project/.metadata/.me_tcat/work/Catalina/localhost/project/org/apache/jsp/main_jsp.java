@@ -106,7 +106,7 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</ul>\r\n");
       out.write("<div class=\"tab-content\">\r\n");
       out.write("<div class=\"tab-pane active\" id=\"info\">\r\n");
-      out.write("<div class=\"page-header\">1.场馆维修通知</div>\r\n");
+      out.write("<div class=\"page-header\">1.场馆通知</div>\r\n");
       out.write("<p>体育场正在施工中，停止对外开放，重新开放时间另行通知，给大家带来的不变，敬请谅解！<p>\r\n");
       out.write("<div class=\"page-header\">2.收费通知</div>\r\n");
       out.write("<p>部分体育场停止收费，但取消对校外人士的开放，望周知！<p>\r\n");

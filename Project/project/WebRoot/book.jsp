@@ -46,6 +46,7 @@
 </div>
 <s:action name="bookAction" executeResult="true">
 </s:action>
+<s:if test="#session.userName!=null">
 <h4 class="page-header" align="center">当前场馆使用情况</h4>
 <table class="table table-bordered">
    <thead>
@@ -88,11 +89,7 @@
 			<option value="体育部篮球">体育部篮球</option>
 			<option value="体育部羽毛球">体育部羽毛球</option>
 			<option value="体育部舞蹈教室">体育部舞蹈教室</option>
-			<option value="活动中心">活动中心</option>
 			<option value="游泳馆">游泳馆</option>
-			<option value="第二体育场篮球">第二体育场篮球</option>
-			<option value="第二体育场排球">第二体育场排球</option>
-			<option value="第二体育场网球">第二体育场网球</option>
 		 </select>
 	  	 </div></td>
          <td><div align="center">
@@ -134,16 +131,17 @@
    </thead>
    <tbody>
    <s:iterator value="#session.information1">
-   <s:if test='!(gymName1==null)'>
+   <s:if test="gymName1!=null">
 	  <tr>
          <td><div align="center"><s:property value="gymName1"></s:property></div></td>
          <td><div align="center"><s:property value="booktime1"></s:property></div></td>
-		 <td><div align="center"><s:a href="deleteOrderAction.action?gymName1=%{gymName1}" onclick="return confirm('你确定要删除该订单吗？');">删除</s:a></div></td>
+         <td><div align="center"><s:a href="deleteOrderAction.action?gymName1=%{gymName1}" onclick="return confirm('你确定要删除该订单吗？');">删除</s:a></div>
       </tr>
    </s:if>
    </s:iterator>
    </tbody>
 </table>
+</s:if>
 </div>
 	<script src="jquery-1.11.1.min.js"></script>
 	<script src="bootstrap.min.js"></script>

@@ -101,6 +101,14 @@ public final class myplan1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\r\n");
       out.write("</div>\r\n");
       out.write("<h4 class=\"page-header\" align=\"center\">我的健身计划</h4>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
       if (_jspx_meth_s_005fproperty_005f0(_jspx_page_context))
         return;
@@ -142,7 +150,7 @@ public final class myplan1_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f0 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f0.setParent(null);
-    // /myplan1.jsp(47,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /myplan1.jsp(55,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f0.setValue("agePlan");
     int _jspx_eval_s_005fproperty_005f0 = _jspx_th_s_005fproperty_005f0.doStartTag();
     if (_jspx_th_s_005fproperty_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -161,7 +169,7 @@ public final class myplan1_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f1 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f1.setParent(null);
-    // /myplan1.jsp(48,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /myplan1.jsp(56,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f1.setValue("weightPlan");
     int _jspx_eval_s_005fproperty_005f1 = _jspx_th_s_005fproperty_005f1.doStartTag();
     if (_jspx_th_s_005fproperty_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -180,7 +188,7 @@ public final class myplan1_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f2 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f2.setParent(null);
-    // /myplan1.jsp(49,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /myplan1.jsp(57,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f2.setValue("hobbyPlan");
     int _jspx_eval_s_005fproperty_005f2 = _jspx_th_s_005fproperty_005f2.doStartTag();
     if (_jspx_th_s_005fproperty_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -199,7 +207,7 @@ public final class myplan1_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f3 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f3.setParent(null);
-    // /myplan1.jsp(50,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /myplan1.jsp(58,42) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fproperty_005f3.setValue("payTimePlan");
     int _jspx_eval_s_005fproperty_005f3 = _jspx_th_s_005fproperty_005f3.doStartTag();
     if (_jspx_th_s_005fproperty_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +43,9 @@
 </div>
 </div>
 </div>
+<s:action name="checkAction" executeResult="true">
+</s:action>
+<s:if test="#session.userName!=null&&#session.age==null">
 <form action=planAction method="post">
 <h4 class="page-header">个人详细信息</h4>
 <div align="center">
@@ -73,6 +77,7 @@
      <input type="radio" name="gender" value="男" checked> 男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <input type="radio" name="gender" value="女"> 女&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
+<br/>
 <div align="center">
 	 兴趣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <input type="radio" name="hobby" value="篮球" checked> 篮球
@@ -85,10 +90,17 @@
      <input type="radio" name="hobby" value="羽毛球">         羽毛球
      <input type="radio" name="hobby" value="足球">         其他
 </div>
+<br/>
 <div align="center">
-	<input class="btn" type="submit" value="健身计划在这里"/>     
+	<input class="btn" type="submit" value="健身计划在这里"/>
 </div>
 </form>
+</s:if>
+
+<s:elseif test="#session.userName!=null&&#session.age!=null">
+<br/><br/><br/>
+<div align="center"><a href="jumpAction.action">点击这里，查看健身计划</a></div>
+</s:elseif>
 </div>
 		<script src="jquery-1.11.1.min.js"></script>
 		<script src="bootstrap.min.js"></script>

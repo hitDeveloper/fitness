@@ -1,0 +1,152 @@
+package plan;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+
+public class jumpAction
+{
+	private String age;
+	private String height;
+	private String weight;
+	private String payTime;
+	private String gender;
+	private String hobby;
+	private String agePlan;
+	private String payTimePlan;
+	private String hobbyPlan;
+	private String weightPlan;
+	public String getAge() 
+	{
+		return age;
+	}
+
+	public void setAge(String age) 
+	{
+		this.age = age;
+	}
+
+	public String getHeight() 
+	{
+		return height;
+	}
+
+	public void setHeight(String height) 
+	{
+		this.height = height;
+	}
+
+	public String getWeight() 
+	{
+		return weight;
+	}
+
+	public void setWeight(String weight) 
+	{
+		this.weight = weight;
+	}
+
+	public String getPayTime() 
+	{
+		return payTime;
+	}
+
+	public void setPayTime(String payTime) 
+	{
+		this.payTime = payTime;
+	}
+
+	public String getGender() 
+	{
+		return gender;
+	}
+
+	public void setGender(String gender) 
+	{
+		this.gender = gender;
+	}
+
+	public String getHobby() 
+	{
+		return hobby;
+	}
+
+	public void setHobby(String hobby) 
+	{
+		this.hobby = hobby;
+	}
+
+	public String getAgePlan() 
+	{
+		return agePlan;
+	}
+
+	public void setAgePlan(String agePlan) 
+	{
+		this.agePlan = agePlan;
+	}
+
+	public String getPayTimePlan() 
+	{
+		return payTimePlan;
+	}
+
+	public void setPayTimePlan(String payTimePlan) 
+	{
+		this.payTimePlan = payTimePlan;
+	}
+
+	public String getHobbyPlan() 
+	{
+		return hobbyPlan;
+	}
+
+	public void setHobbyPlan(String hobbyPlan) 
+	{
+		this.hobbyPlan = hobbyPlan;
+	}
+
+	public String getWeightPlan() {
+		return weightPlan;
+	}
+
+	public void setWeightPlan(String weightPlan) 
+	{
+		this.weightPlan = weightPlan;
+	}
+
+	public String execute() throws Exception
+	{
+		try{
+			String userName="",age="",height="",weight="",payTime="",gender="",hobby="";
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Statement st = (Statement) con.createStatement();
+			String sql1="select * from tb_info where userName=\""+userName+"\"";
+			ResultSet rs = st.executeQuery(sql1);
+			if(rs.next())
+			{
+				age=rs.getString(2);
+				height=rs.getString(2);
+				weight=rs.getString(2);
+				payTime=rs.getString(2);
+				gender=rs.getString(2);
+				hobby=rs.getString(2);
+			}
+			
+			
+			
+			
+			
+		}catch(SQLException e)
+		{
+			return null;
+		}catch(ClassNotFoundException e)
+		{
+			return null;
+		}
+		return "SUCCESS";
+	}
+}

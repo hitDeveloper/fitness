@@ -35,6 +35,9 @@ public class userLoginAction{
 			String sql1="select * from tb_users where username=\""+userName+"\" and password=\""+password+"\"";
 			String sql2="select * from tb_admin where adminName=\""+adminName+"\" and password=\""+password+"\"";
 			String sql3="select * from tb_admin where adminName=\""+adminName+"\"";
+			String age=null;
+			String sql5="select * from tb_info where userName=\""+userName+"\"";
+			System.out.println(userName);
 			if("".equals(password))
 			{
 				information="密码不能为空";
@@ -55,7 +58,13 @@ public class userLoginAction{
 	            	information="用户名或密码错误";
 	            	return "INPUT";
 	            }
-			}
+	            rs=st.executeQuery(sql5);
+	            if(rs.next())
+	            {
+	            	 Map attibutes = ActionContext.getContext().getSession();
+	            	 attibutes.put("age", rs.getString(2));
+	            }
+	        }
 			else if(!"".equals(adminName))
 			{
 				Statement st = (Statement) con.createStatement();
@@ -111,6 +120,7 @@ public class userLoginAction{
 		}
 		Map attibutes = ActionContext.getContext().getSession();
 		attibutes.put("userName", userName);
+		attibutes.put("adminName", adminName);
 		return "SUCCESS";
 	}
 }

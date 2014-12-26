@@ -1,0 +1,244 @@
+import java.io.*;
+import java.util.regex.*;
+
+public class lab1
+{
+	public static void main(String[] args) throws Exception
+	{
+		Service.ServiceWork();
+		int[] length=new int[4];
+		long start=System.nanoTime();
+		for(int i=0;i<4;i++)
+		{
+			for(int j=0;j<14;j++)
+			{
+				if(Service.include[i][j]!=0||j==0)
+				{
+					length[i]++;
+				}
+			}
+		}
+		File fis2=new File("Service.txt");
+		BufferedReader fos2=new BufferedReader(new FileReader(fis2));
+		BufferedWriter wr=new BufferedWriter(new FileWriter("Result.txt"));
+		String str1=null;
+		String[] str=new String[7000];
+		String[][] str3=new String[7000][5];
+		int i=0;
+		while((str1=fos2.readLine())!=null)
+		{
+		    str[i]=str1;
+		    i++;
+	    }
+		for(i=0;i<7000;i++)
+		{
+			for(int j=0;j<5;j++)
+			{
+				String[] str2=str[i].split(" ");
+				str3[i][j]=str2[j];
+			}
+		}
+		fos2.close();
+		for(i=0;i<14;i++)
+		{
+			for(int j=i*500;j<(i+1)*500-2;j++)
+			{
+				for(int k=(i+1)*500-1;k>=j+1;k--)
+				{
+					float QoS1=Float.parseFloat(str3[k][2])-Float.parseFloat(str3[k][4])/100;
+					float QoS2=Float.parseFloat(str3[k-1][2])-Float.parseFloat(str3[k-1][4])/100;
+					if(QoS1>QoS2)
+					{
+						String[] str4=new String[5];
+						for(int t=0;t<5;t++)
+						{
+							str4[t]=str3[k][t];
+							str3[k][t]=str3[k-1][t];
+							str3[k-1][t]=str4[t];
+						}
+					}
+				}
+			}
+		}
+		int[] group=new int[14];
+		for(int j=0;j<4;j++)
+		{
+			float TR=Float.parseFloat(str3[group[0]][2]);
+			float TP=Float.parseFloat(str3[group[0]][4]);
+			EOF:
+		    for(i=1;i<14;i++)
+		    {
+		    	while(Service.include[j][i]==0)
+		    	{
+		    		i++;
+		    		if(i>=14)
+		    		{
+		    			break EOF;
+		    		}
+		    	}
+			    TR=Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][2])*TR;
+			    TP=TP+Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4]);
+			    while((TR<Service.arr1[j][0])&&(group[Service.include[j][i]]<500)&&(Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4]))<=Service.arr1[j][1])
+			    {
+				    TR=TR/Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][2]);
+				    TP=TP-Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4]);
+				    group[Service.include[j][i]]=group[Service.include[j][i]]+1;
+				    TR=Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][2])*TR;
+				    TP=TP+Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4]);
+			    }
+			    if(group[Service.include[j][i]]>=500||Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4])>Service.arr1[j][1]||TP>Service.arr1[j][1])
+			    {
+			    	TR=TR/Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][2]);
+				    TP=TP-Float.parseFloat(str3[group[Service.include[j][i]]+500*Service.include[j][i]][4]);
+				    group[Service.include[j][i]-1]=group[Service.include[j][i]-1]+1;
+				    i--;
+			    }
+		    }
+	     	String k=Service.str4[j];
+		    k=k.replaceAll("A",str3[group[Service.include[j][0]]+500*Service.include[j][0]][0]);
+		    k=k.replaceAll("B",str3[group[Service.include[j][1]]+500*Service.include[j][1]][0]);
+		    k=k.replaceAll("C",str3[group[Service.include[j][2]]+500*Service.include[j][2]][0]);
+		    k=k.replaceAll("D",str3[group[Service.include[j][3]]+500*Service.include[j][3]][0]);
+		    k=k.replaceAll("E",str3[group[Service.include[j][4]]+500*Service.include[j][4]][0]);
+		    k=k.replaceAll("F",str3[group[Service.include[j][5]]+500*Service.include[j][5]][0]);
+		    k=k.replaceAll("G",str3[group[Service.include[j][6]]+500*Service.include[j][6]][0]);
+		    k=k.replaceAll("H",str3[group[Service.include[j][7]]+500*Service.include[j][7]][0]);
+		    k=k.replaceAll("I",str3[group[Service.include[j][8]]+500*Service.include[j][8]][0]);
+		    k=k.replaceAll("J",str3[group[Service.include[j][9]]+500*Service.include[j][9]][0]);
+		    k=k.replaceAll("K",str3[group[Service.include[j][10]]+500*Service.include[j][10]][0]);
+		    k=k.replaceAll("L",str3[group[Service.include[j][11]]+500*Service.include[j][11]][0]);
+		    k=k.replaceAll("M",str3[group[Service.include[j][12]]+500*Service.include[j][12]][0]);
+		    k=k.replaceAll("N",str3[group[Service.include[j][13]]+500*Service.include[j][13]][0]);
+		    k=k+",Reliability="+String.valueOf(TR)+",Cost="+String.valueOf(TP)+",Q="+String.valueOf(TR-TP/100);
+            wr.write(k);
+            wr.newLine();
+            long end=System.nanoTime();
+            out¡£println("start="+start+",end="+end);
+            start=end;
+		}
+		wr.close();
+	}
+}
+class Service
+{
+	static float[][] arr1=new float[4][2];
+    static int[][] include=new int[4][14];
+	static String[] str4=new String[4];
+	{
+		for(int i=0;i<4;i++)
+		{
+			for(int j=0;j<14;j++)
+			{
+				include[i][j]=0;
+			}
+		}
+	}
+	public static void ServiceWork() throws IOException
+	{
+		File fis=new File("PROCESS.txt");
+		File fis1=new File("REQ.txt");
+		BufferedReader fos=new BufferedReader(new FileReader(fis));
+		BufferedReader fos1=new BufferedReader(new FileReader(fis1));
+		String str=null;
+		String[] str1=new String[4];
+		for(int i=0;i<4;i++)
+		{
+			str1[i]="";
+		}
+		String str2=null;
+		String str3="";
+		String[] arr=new String[2];
+		int j=0;
+		int k=0;
+		while((str=fos.readLine())!=null)
+		{
+			str4[k]=str;
+			k++;
+			Pattern p=Pattern.compile("[A-Z]");
+			Matcher m=p.matcher(str);
+		    while(m.find())
+		    {
+		    	if(str1[j].contains(m.group())!=true)
+		    	{
+		    		str1[j]=str1[j]+m.group();
+		    	}
+		    }
+		    j++;
+	    }
+		k=0;
+		while((str2=fos1.readLine())!=null)
+		{
+			Pattern p=Pattern.compile("[0-9]"+".");
+			Matcher m=p.matcher(str2);
+		    while(m.find())
+		    {
+		    	if(str3.contains(m.group())!=true)
+		    	{
+		    		str3=str3+m.group();
+		    	}
+		    }
+		    int index;
+		    index=str3.indexOf(",");
+		    arr[0]=str3.substring(0, index);
+		    arr[1]=str3.substring(index+1);
+		    arr1[k][0]=Float.parseFloat(arr[0]);
+		    arr1[k][1]=Float.parseFloat(arr[1]);
+		    k++;
+		    str3="";
+	    }
+		fos.close();
+		fos1.close();
+		int t=0;
+		for(t=0;t<4;t++)
+		{
+			for(j=0;j<str1[t].length();j++)
+			{
+				switch(str1[t].charAt(j))
+				{
+				case 'A':
+					include[t][0]=0;
+					break;
+				case 'B':
+					include[t][1]=1;
+					break;
+				case 'C':
+					include[t][2]=2;
+					break;
+				case 'D':
+					include[t][3]=3;
+					break;
+				case 'E':
+					include[t][4]=4;
+					break;
+				case 'F':
+					include[t][5]=5;
+					break;
+				case 'G':
+					include[t][6]=6;
+					break;
+				case 'H':
+					include[t][7]=7;
+					break;
+				case 'I':
+					include[t][8]=8;
+					break;
+				case 'J':
+					include[t][9]=9;
+					break;
+				case 'K':
+					include[t][10]=10;
+					break;
+				case 'L':
+					include[t][11]=11;
+					break;
+				case 'M':
+					include[t][12]=12;
+					break;
+				case 'N':
+					include[t][13]=13;
+					break;
+				}
+			}
+		}
+	}
+}

@@ -155,6 +155,10 @@
 <img src="image/5.jpg" class="pull-right" width="400">
 </div>
 <div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
+</div>
+<div class="span10">
 <h4 class="page-header">开放时间</h4>
 <p><s:property value="#session.time"/></p>
 
@@ -209,6 +213,10 @@
 </div>
 <div class="span10">
 <img src="image/5.jpg" class="pull-right" width="400">
+</div>
+<div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>
@@ -269,6 +277,10 @@
 </div>
 <div class="span10">
 <img src="image/5.jpg" class="pull-right" width="400">
+</div>
+<div class="span10">
+<h4 class="page-header">比赛消息</h4>
+<p><s:property value="#session.news"/></p>
 </div>
 <div class="span10">
 <h4 class="page-header">开放时间</h4>

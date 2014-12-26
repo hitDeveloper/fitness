@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="struts-default.xml"/>
+    <package name="default" extends="struts-default">
+  		<action name="userLoginAction" class="login.userLoginAction">
+  		    <result name="SUCCESS">/main.jsp</result>
+  		    <result name="NONE">/admin.jsp</result>
+     		<result name="INPUT">/login.jsp</result>
+  		</action>
+  		<action name="registerAction" class="login.registerAction">
+  		    <result name="SUCCESS">/success.jsp</result>
+     		<result name="INPUT">/register.jsp</result>
+  		</action>
+  		<action name="backAction" class="back.backAction">
+  		    <result name="SUCCESS">/success1.jsp</result>
+     		<result name="INPUT">/admin.jsp</result>
+  		</action>
+  		<action name="pageAction" class="page.pageAction">
+  		</action>
+  		<action name="displayAction" class="page.displayAction">
+  		</action>
+  		<action name="bookAction" class="page.bookAction">
+  		<result name="NONE">/error.jsp</result>
+  		</action>
+  		<action name="orderDisAction" class="back.orderDisAction">
+  		</action>
+  		<action name="orderAction" class="page.orderAction">
+  		<result name="SUCCESS">/success2.jsp</result>
+  		<result name="INPUT">/book.jsp</result>
+  		</action>
+  		<action name="deleteOrderAction" class="page.deleteOrderAction">
+  		<result name="SUCCESS">/success3.jsp</result>
+  		<result name="INPUT">/book.jsp</result>
+  		</action>
+  		<action name="planAction" class="plan.planAction">
+  		<result name="SUCCESS">/myplan1.jsp</result>
+  		<result name="INPUT">/myplan.jsp</result>
+  		</action>
+  	</package>
+</struts>

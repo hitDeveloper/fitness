@@ -1,0 +1,264 @@
+package plan;
+import java.sql.*;
+import java.util.*;
+
+import com.opensymphony.xwork2.ActionContext;
+
+public class planAction
+{
+	private String age;
+	private String height;
+	private String weight;
+	private String payTime;
+	private String gender;
+	private String hobby;
+	private String agePlan;
+	private String payTimePlan;
+	private String hobbyPlan;
+	private String weightPlan;
+	public String getWeightPlan()
+	{
+		return this.weightPlan;
+	}
+	public String getAgePlan()
+	{
+		return this.agePlan;
+	}
+	public String getPayTimePlan()
+	{
+		return this.payTimePlan;
+	}
+	public String getHobbyPlan()
+	{
+		return this.hobbyPlan;
+	}
+	public void setAge(String age)
+	{
+		this.age=age;
+	}
+	public String getAge()
+	{
+		return this.age;
+	}
+	public void setHeight(String height)
+	{
+		this.height=height;
+	}
+	public String getHeight()
+	{
+		return this.height;
+	}
+	public void setWeight(String weight)
+	{
+		this.weight=weight;
+	}
+	public String getWeight()
+	{
+		return this.weight;
+	}
+	public void setPayTime(String payTime)
+	{
+		this.payTime=payTime;
+	}
+	public String getPayTime()
+	{
+		return this.payTime;
+	}
+	public void setGender(String gender)
+	{
+		this.gender=gender;
+	}
+	public String getGender()
+	{
+		return this.gender;
+	}
+	public void setHobby(String hobby)
+	{
+		this.hobby=hobby;
+	}
+	public String getHobby()
+	{
+		return this.hobby;
+	}
+	public String execute() throws Exception
+	{
+		try{
+			agePlan="";
+			payTimePlan="";
+			hobbyPlan="";
+			weightPlan="";
+			int number;
+			number=Integer.parseInt(weight)/(Integer.parseInt(height)*Integer.parseInt(height));
+			String userName="";
+			Map attibutes = ActionContext.getContext().getSession();
+			userName = (String)attibutes.get("userName");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Statement st = (Statement) con.createStatement();
+			String sql2="INSERT INTO tb_info(userName, age, height, weight, payTime, gender, hobby) VALUES ('"+userName+"','"+ age+"','" + height+"','"+weight+"','"+payTime+"','"+gender+"','"+hobby+"')";
+			st.executeUpdate(sql2);
+			if(Integer.parseInt(age)>45)
+			{
+				String sql1="select * from tb_plan where pID= '1'";
+				ResultSet rs = st.executeQuery(sql1);
+				while(rs.next())
+				{
+					agePlan=rs.getString(2);
+				}
+				rs.close();
+				return "SUCCESS";
+			}
+			else
+			{
+				if(number<18)
+				{
+					String sql1="select * from tb_plan where pID= '4'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						weightPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(number>25)
+				{
+					String sql1="select * from tb_plan where pID= '2'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						weightPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else
+				{
+					String sql1="select * from tb_plan where pID= '3'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						weightPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				if(payTime.equals("每周2小时以内"))
+				{
+					String sql1="select * from tb_plan where pID= '7'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						payTimePlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(payTime.equals("每周2-5小时之间"))
+				{
+					String sql1="select * from tb_plan where pID= '6'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						payTimePlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else
+				{
+					String sql1="select * from tb_plan where pID= '5'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						payTimePlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				if(hobby.equals("篮球"))
+				{
+					String sql1="select * from tb_plan where pID= '8'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("网球"))
+				{
+					String sql1="select * from tb_plan where pID= '9'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("排球"))
+				{
+					String sql1="select * from tb_plan where pID= '10'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("羽毛球"))
+				{
+					String sql1="select * from tb_plan where pID= '11'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("足球"))
+				{
+					String sql1="select * from tb_plan where pID= '12'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("乒乓球"))
+				{
+					String sql1="select * from tb_plan where pID= '13'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else if(hobby.equals("跑步"))
+				{
+					String sql1="select * from tb_plan where pID= '14'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+				else
+				{
+					String sql1="select * from tb_plan where pID= '15'";
+					ResultSet rs = st.executeQuery(sql1);
+					while(rs.next())
+					{
+						hobbyPlan=rs.getString(2);
+					}
+					rs.close();
+				}
+			}
+		}catch(SQLException e)
+		{
+			System.out.println("00");
+			return "INPUT";
+		}catch(ClassNotFoundException e)
+		{
+			return "INPUT";
+		}
+		return "SUCCESS";
+	}
+}

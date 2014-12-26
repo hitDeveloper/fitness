@@ -9,7 +9,7 @@
 	<link href="bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="backAction" method="post">
+<form action="backAction" method="post" enctype="multipart/form-data">
 <div class="container">
 <h1 class="page-header" >哈工大健身网<img src="image/logo.jpg"></h1>
 	<div class="page-header" align="center"><h4>欢迎您，<s:property value="#session.gymName"/>管理员</h4></div>
@@ -18,7 +18,7 @@
 <table class="table table-bordered">
 	<tr>
 	<td><label>已用情况</label><input type="text" name="usedNumber" value="${usedNumber}"></td>
-	<td><label>总共可用</label><input type="text" name="totalNumber" value="${totalNumber}"></td>
+	<td><label>总共可用</label><input type="text" name="totalNumber" value="${totalNumber}"><a href="order.jsp">订单详情</a></td>
 	<td><label>联系人</label><input type="text" name="manager" value="${manager}"></td>
 	</tr>
 	<tr>
@@ -36,6 +36,7 @@
 <div align="center">
 <button type="submit" class="btn btn-default">提交</button>
 <button type="reset" class="btn btn-default">取消</button>
+
 </div>
 </div>
 </form>
