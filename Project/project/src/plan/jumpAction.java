@@ -1,7 +1,7 @@
 package plan;
 import java.sql.*;
 import java.util.*;
-
+import java.io.Serializable;
 import com.opensymphony.xwork2.ActionContext;
 
 public class jumpAction
@@ -122,7 +122,7 @@ public class jumpAction
 			Map attibutes = ActionContext.getContext().getSession();
 			userName = (String)attibutes.get("userName");
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Connection con = DriverManager.getConnection("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_hitfitness","xwomyojjnm","1imik41h0yi1kmh0hmx02l3i01yz2203ilzikmh1");
 			Statement st = (Statement) con.createStatement();
 			String sql2="select * from tb_info where userName=\""+userName+"\"";
 			ResultSet rs = st.executeQuery(sql2);

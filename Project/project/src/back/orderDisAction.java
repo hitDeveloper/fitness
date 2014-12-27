@@ -1,6 +1,7 @@
 package back;
 import java.sql.*;
 import java.util.*;
+import java.io.Serializable;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -36,7 +37,7 @@ public class orderDisAction
 				information[i]=new info();
 			i=0;
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Connection con = DriverManager.getConnection("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_hitfitness","xwomyojjnm","1imik41h0yi1kmh0hmx02l3i01yz2203ilzikmh1");
 			String sql1="select * from tb_book where gymName=\""+gymName+"\"";
 			Statement st = (Statement) con.createStatement();
 			ResultSet rs = st.executeQuery(sql1);
@@ -58,7 +59,7 @@ public class orderDisAction
 		return null;
 	}
 }
-class info
+class info implements Serializable
 {
 	public String userName;
 	public String booktime;

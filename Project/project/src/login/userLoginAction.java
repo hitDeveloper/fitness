@@ -1,6 +1,7 @@
 package login;
 import java.sql.*;
 import java.util.*;
+import java.io.Serializable;
 import com.opensymphony.xwork2.ActionContext;
 public class userLoginAction{
 	private String userName;
@@ -31,7 +32,7 @@ public class userLoginAction{
 		try{
 			password=password.replace(", ", "");
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Connection con = DriverManager.getConnection("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_hitfitness","xwomyojjnm","1imik41h0yi1kmh0hmx02l3i01yz2203ilzikmh1");
 			String sql1="select * from tb_users where username=\""+userName+"\" and password=\""+password+"\"";
 			String sql2="select * from tb_admin where adminName=\""+adminName+"\" and password=\""+password+"\"";
 			String sql3="select * from tb_admin where adminName=\""+adminName+"\"";

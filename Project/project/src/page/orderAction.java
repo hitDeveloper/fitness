@@ -1,7 +1,6 @@
 package page;
 import java.sql.*;
 import java.util.*;
-
 import com.opensymphony.xwork2.ActionContext;
 public class orderAction
 {
@@ -37,8 +36,9 @@ public class orderAction
 			String usedNumber=null,totalNumber=null;
 			userName = (String)attibutes.get("userName");
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Connection con = DriverManager.getConnection("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_hitfitness","xwomyojjnm","1imik41h0yi1kmh0hmx02l3i01yz2203ilzikmh1");
 			String sql2="select * from tb_gym where gymName=\""+gymName+"\"";
+			String sql4="select * from tb_book where gymName=\""+gymName+"\" and userName=\""+userName+"\"";
 			Statement st = (Statement) con.createStatement();
 			Statement st1 = (Statement) con.createStatement();
 			ResultSet rs = st.executeQuery(sql2);
@@ -47,11 +47,25 @@ public class orderAction
 				usedNumber=rs.getString(2);
 				totalNumber=rs.getString(3);
 			}
-			rs.close();
+			rs=st.executeQuery(sql4);
 			number=Integer.parseInt(totalNumber)-Integer.parseInt(usedNumber);
+			String array[]=booktime.split("-");
+			String array1[]=array[0].split(":");
+			Calendar rightNow = Calendar.getInstance();
+			int hour = rightNow.get(Calendar.HOUR_OF_DAY);
 			if(number<=0)
 			{
 				information="您想要预定的场馆已满，建议其他场馆";
+				return "INPUT";
+			}
+			if(rs.next())
+			{
+				information="您今天已经预定过该场馆";
+				return "INPUT";
+			}
+			if(Integer.parseInt(array1[0])<hour)
+			{
+				information="时间已过,请注意时间";
 				return "INPUT";
 			}
 			number=Integer.parseInt(usedNumber)+1;

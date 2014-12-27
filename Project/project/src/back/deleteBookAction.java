@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Map;
+import java.io.Serializable;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -29,7 +30,7 @@ public class deleteBookAction
 			System.out.println(gymName);
 			System.out.println(userName);
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","1191834709");
+			Connection con = DriverManager.getConnection("jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_hitfitness","xwomyojjnm","1imik41h0yi1kmh0hmx02l3i01yz2203ilzikmh1");
 			String sql1="delete from tb_book where userName=\""+userName+"\" and gymName=\""+gymName+"\"";
 			Statement st = (Statement) con.createStatement();
 			st.executeUpdate(sql1);

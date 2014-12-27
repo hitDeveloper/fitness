@@ -4,6 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <distributable/>
   <display-name>Struts Blank</display-name>	
   <welcome-file-list>
     <welcome-file>main.jsp</welcome-file>
@@ -17,4 +18,8 @@
   <filter-mapping>
   	<filter-name>struts2</filter-name>
   	<url-pattern>/*</url-pattern>
-</filter-mapping></web-app>
+</filter-mapping>  
+<session-config>
+  <session-timeout>30</session-timeout>
+</session-config>
+</web-app>
